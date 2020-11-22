@@ -1,71 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Containers>
-  <TemplateURL>https://raw.githubusercontent.com/binhex/docker-templates/master/binhex/deluge.xml</TemplateURL>
-  <Beta>False</Beta>
-  <Category>Cloud, Productivity</Category>
-  <Name>LogicalDoc CE</Name>
-  <Description></Description>
-  <Overview>
-  </Overview>
-  <Support>https://forums.logicaldoc.com/</Support>
-  <Registry>https://hub.docker.com/r/logicaldoc/logicaldoc-ce/</Registry>
-  <GitHub></GitHub>
-  <Repository>logicaldoc/logicaldoc-ce</Repository>
-  <Project>https://www.logicaldoc.com/</Project>
-  <BindTime>true</BindTime>
-  <Privileged>false</Privileged>
-    <Networking>
-    <Mode>bridge</Mode>
-    <Publish>
-      <Port>
-        <HostPort>8080</HostPort>
-        <ContainerPort>8080</ContainerPort>
-        <Protocol>tcp</Protocol>
-      </Port>      
-    </Publish>
-  </Networking>
-  <Environment>
-    <Variable>
-      <Name>LDOC_MEMORY</Name>
-      <Value></Value>
-    </Variable>
-    <Variable>
-      <Name>DB_ENGINE</Name>
-      <Value></Value>
-    </Variable>
-    <Variable>
-      <Name>DB_PORT</Name>
-      <Value></Value>
-    </Variable>
-    <Variable>
-      <Name>DB_NAME</Name>
-      <Value></Value>
-    </Variable>
-    <Variable>
-      <Name>DB_USER</Name>
-      <Value></Value>
-    </Variable>
-    <Variable>
-      <Name>DB_PASSWORD</Name>
-      <Value></Value>
-    </Variable>
-    <Variable>
-      <Name>DB_HOST</Name>
-      <Value></Value>
-    </Variable>
-  </Environment>
-  <Data>
-    <Volume>
-      <HostDir></HostDir>
-      <ContainerDir>/opt/logicaldoc/conf</ContainerDir>
-      <Mode>rw</Mode>
-    </Volume>
-    <Volume>
-      <HostDir></HostDir>
-      <ContainerDir>/opt/logicaldoc/repository</ContainerDir>
-      <Mode>rw</Mode>
-    </Volume>
-  </Data>
-  <WebUI>http://[IP]:[PORT:8080]/</WebUI>
-  <Icon>https://raw.githubusercontent.com/binhex/docker-templates/master/binhex/images/deluge-icon.png</Icon>  
-</Containers>
+<Container version="2">
+    <Name Default="LogicalDoc">LogicalDoc</Name>
+    <Overview>LogicalDOC Community Edition (AKA LogicalDOC CE) is an open-source document management software platform. By leveraging on the best-of-breed  Java frameworks, it creates a flexible and powerful document management platform, which thanks to the most advanced presentation technology (Google GWT), is able to meet the needs of usability and more demanding management. LogicalDOC is both document management and collaboration system. The software is loaded with many functions and allows organizing, index, retrieving, controlling and distributing important business documents securely and safely for any organization and individual.</Overview>
+    <Registry>https://hub.docker.com/r/logicaldoc/logicaldoc-ce/</Registry>
+    <Repository>logicaldoc/logicaldoc-ce</Repository>
+    <Privileged>false</Privileged>
+    <Support>https://docs.logicaldoc.com/en/</Support>
+    <Network Default="bridge">bridge</Network>
+    <WebUI>http://[IP]:[PORT:8080]</WebUI>
+    <Icon>https://github.com/johnsobi/UnRaidTemplates/blob/main/logicaldoc.png</Icon>
+    <Category>Productivity</Category>
+   <Config Type="Path" 
+       Name="Config directory" 
+       Target="/opt/logicaldoc/conf" 
+       Default="/mnt/user/appdata/logicaldoc/conf" 
+       Mode="rw" 
+       Description="This houses the LogicalDoc configuration."
+       Required="true">/mnt/user/appdata/logicaldoc/conf</Config>
+<Config Type="Path" 
+       Name="Document Repository" 
+       Target="/opt/logicaldoc/repository" 
+       Default="/mnt/user/appdata/logicaldoc/repository" 
+       Mode="rw" 
+       Description="This houses the LogicalDoc document repository."
+       Required="true">/mnt/user/appdata/logicaldoc/repository</Config>
+<Config Type="Variable" 
+       Name="LogicalDoc Memory Allocation" 
+       Target="LDOC_MEMORY" 
+       Default="2000" 
+       Description="Memory allocated for LogicalDOC expressed in MB (default is 2000)" 
+       Mask="false" 
+       Display="always" 
+       Required="false">2000</Config>
+<Config Type="Variable" 
+       Name="LogicalDoc Database Engine" 
+       Target="DB_ENGINE" 
+       Default="mysql" 
+       Description="The database type, possible vaues are: mysql(default), mssql, oracle, postgres" 
+       Mask="false" 
+       Display="always" 
+       Required="false">mysql</Config>
+<Config Type="Variable" 
+       Name="LogicalDoc Database Port" 
+       Target="DB_PORT" 
+       Default="3306" 
+       Description="The database communication port (default is 3306)" 
+       Mask="false" 
+       Display="always" 
+       Required="false">3306</Config>
+<Config Type="Variable" 
+       Name="LogicalDoc Database Name" 
+       Target="DB_NAME" 
+       Default="logicaldoc" 
+       Description="The database name (default is 'logicaldoc')" 
+       Mask="false" 
+       Display="always" 
+       Required="false">logicaldoc</Config>
+<Config Type="Variable" 
+       Name="LogicalDoc Database Instance" 
+       Target="DB_INSTANCE" 
+       Default="" 
+       Description="Some databases require the instance specification" 
+       Mask="false" 
+       Display="always" 
+       Required="false"/>
+<Config Type="Variable" 
+       Name="LogicalDoc Database User" 
+       Target="DB_NAME" 
+       Default="ldoc" 
+       Description="The username (default is 'ldoc')" 
+       Mask="false" 
+       Display="always" 
+       Required="false">ldoc</Config>
+<Config Type="Variable" 
+       Name="LogicalDoc Database Password" 
+       Target="DB_PASSWORD" 
+       Default="changeme" 
+       Description="The password (default is 'changeme')" 
+       Mask="true" 
+       Display="always" 
+       Required="false">changeme</Config>
+<Config Type="Variable" 
+       Name="LogicalDoc Database Manual URL" 
+       Target="DB_MANUALURL" 
+       Default="false" 
+       Description="Must be true when using DB_URL (default is 'false')" 
+       Mask="false" 
+       Display="always" 
+       Required="false">false</Config>
+<Config Type="Variable" 
+       Name="LogicalDoc Database JDBC URL" 
+       Target="DB_URL" 
+       Default="" 
+       Description="The jdbc url to connect to the database (remember to set DB_MANUALURL to 'true')" 
+       Mask="false" 
+       Display="always" 
+       Required="false"/>
+<Config Type="Port" 
+       Name="LogicalDoc Web UI" 
+       Target="8080" 
+       Default="8080" 
+       Mode="tcp" 
+       Description="This is the LogicalDoc Web UI." 
+       Display="always" 
+       Required="true">8080</Config>
+</Container>
