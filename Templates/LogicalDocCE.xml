@@ -10,106 +10,17 @@
     <WebUI>http://[IP]:[PORT:8080]</WebUI>
     <Icon>https://i.imgur.com/iG0tQQI.png</Icon>
     <Category>Productivity</Category>
-   <Config Type="Path" 
-       Name="Config directory" 
-       Target="/opt/logicaldoc/conf" 
-       Default="/mnt/user/appdata/logicaldoc/conf" 
-       Mode="rw" 
-       Description="This houses the LogicalDoc configuration."
-       Required="true">/mnt/user/appdata/logicaldoc/conf</Config>
-<Config Type="Path" 
-       Name="Document Repository" 
-       Target="/opt/logicaldoc/repository" 
-       Default="/mnt/user/appdata/logicaldoc/repository" 
-       Mode="rw" 
-       Description="This houses the LogicalDoc document repository."
-       Required="true">/mnt/user/appdata/logicaldoc/repository</Config>
-<Config Type="Variable" 
-       Name="LogicalDoc Memory Allocation" 
-       Target="LDOC_MEMORY" 
-       Default="2000" 
-       Description="Memory allocated for LogicalDOC expressed in MB (default is 2000)" 
-       Mask="false" 
-       Display="always" 
-       Required="false">2000</Config>
-<Config Type="Variable" 
-       Name="LogicalDoc Database Host" 
-       Target="DB_HOST" 
-       Default="mysql-ld" 
-       Description="The database server host (default is 'mysql-ld')" 
-       Mask="false" 
-       Display="always" 
-       Required="false">mysql-ld</Config>
-<Config Type="Variable" 
-       Name="LogicalDoc Database Engine" 
-       Target="DB_ENGINE" 
-       Default="mysql" 
-       Description="The database type, possible vaues are: mysql(default), mssql, oracle, postgres" 
-       Mask="false" 
-       Display="always" 
-       Required="false">mysql</Config>
-<Config Type="Variable" 
-       Name="LogicalDoc Database Port" 
-       Target="DB_PORT" 
-       Default="3306" 
-       Description="The database communication port (default is 3306)" 
-       Mask="false" 
-       Display="always" 
-       Required="false">3306</Config>
-<Config Type="Variable" 
-       Name="LogicalDoc Database Name" 
-       Target="DB_NAME" 
-       Default="logicaldoc" 
-       Description="The database name (default is 'logicaldoc')" 
-       Mask="false" 
-       Display="always" 
-       Required="false">logicaldoc</Config>
-<Config Type="Variable" 
-       Name="LogicalDoc Database Instance" 
-       Target="DB_INSTANCE" 
-       Default="" 
-       Description="Some databases require the instance specification" 
-       Mask="false" 
-       Display="always" 
-       Required="false"/>
-<Config Type="Variable" 
-       Name="LogicalDoc Database User" 
-       Target="DB_NAME" 
-       Default="ldoc" 
-       Description="The username (default is 'ldoc')" 
-       Mask="false" 
-       Display="always" 
-       Required="false">ldoc</Config>
-<Config Type="Variable" 
-       Name="LogicalDoc Database Password" 
-       Target="DB_PASSWORD" 
-       Default="changeme" 
-       Description="The password (default is 'changeme')" 
-       Mask="true" 
-       Display="always" 
-       Required="false">changeme</Config>
-<Config Type="Variable" 
-       Name="LogicalDoc Database Manual URL" 
-       Target="DB_MANUALURL" 
-       Default="false" 
-       Description="Must be true when using DB_URL (default is 'false')" 
-       Mask="false" 
-       Display="always" 
-       Required="false">false</Config>
-<Config Type="Variable" 
-       Name="LogicalDoc Database JDBC URL" 
-       Target="DB_URL" 
-       Default="" 
-       Description="The jdbc url to connect to the database (remember to set DB_MANUALURL to 'true')" 
-       Mask="false" 
-       Display="always" 
-       Required="false"/>
-<Config Type="Port" 
-       Name="LogicalDoc Web UI" 
-       Target="8080" 
-       Default="8080" 
-       Mode="tcp" 
-       Description="This is the LogicalDoc Web UI." 
-       Display="always" 
-       Required="true">8080</Config>
+    <Config Type="Path" Name="Config directory" Target="/opt/logicaldoc/conf" Default="/mnt/user/appdata/logicaldoc/conf" Mode="rw" Description="This houses the LogicalDoc configuration." Required="true">/mnt/user/appdata/logicaldoc/conf</Config>
+    <Config Type="Path" Name="Document Repository" Target="/opt/logicaldoc/repository" Default="/mnt/user/appdata/logicaldoc/repository" Mode="rw" Description="This houses the LogicalDoc document repository." Required="true">/mnt/user/appdata/logicaldoc/repository</Config>
+    <Config Type="Variable" Name="LogicalDoc Memory Allocation" Target="LDOC_MEMORY" Default="2000" Description="Memory allocated for LogicalDOC expressed in MB (default is 2000)" Mask="false" Display="always" Required="false">2000</Config>
+    <Config Type="Variable" Name="LogicalDoc Database Host" Target="DB_HOST" Default="mysql-ld" Description="The database server host (default is 'mysql-ld')" Mask="false" Display="always" Required="false">mysql-ld</Config>
+    <Config Type="Variable" Name="LogicalDoc Database Engine" Target="DB_ENGINE" Default="mysql" Description="The database type, possible vaues are: mysql(default), mssql, oracle, postgres" Mask="false" Display="always" Required="false">mysql</Config>
+    <Config Type="Variable" Name="LogicalDoc Database Port" Target="DB_PORT" Default="3306" Description="The database communication port (default is 3306)" Mask="false" Display="always" Required="false">3306</Config>
+    <Config Type="Variable" Name="LogicalDoc Database Name" Target="DB_NAME" Default="logicaldoc" Description="The database name (default is 'logicaldoc')" Mask="false" Display="always" Required="false">logicaldoc</Config>
+    <Config Type="Variable" Name="LogicalDoc Database Instance" Target="DB_INSTANCE" Default="" Description="Some databases require the instance specification" Mask="false" Display="always" Required="false"/>
+    <Config Type="Variable" Name="LogicalDoc Database User" Target="DB_USER" Default="ldoc" Description="The username (default is 'ldoc')" Mask="false" Display="always" Required="false">ldoc</Config>
+    <Config Type="Variable" Name="LogicalDoc Database Password" Target="DB_PASSWORD" Default="changeme" Description="The password (default is 'changeme')" Mask="true" Display="always" Required="false">changeme</Config>
+    <Config Type="Variable" Name="LogicalDoc Database Manual URL" Target="DB_MANUALURL" Default="false" Description="Must be true when using DB_URL (default is 'false')" Mask="false" Display="always" Required="false">false</Config>
+    <Config Type="Variable" Name="LogicalDoc Database JDBC URL" Target="DB_URL" Default="" Description="The jdbc url to connect to the database (remember to set DB_MANUALURL to 'true')" Mask="false" Display="always" Required="false"/>
+    <Config Type="Port" Name="LogicalDoc Web UI" Target="8080" Default="8080" Mode="tcp" Description="This is the LogicalDoc Web UI." Display="always" Required="true">8080</Config>
 </Container>
