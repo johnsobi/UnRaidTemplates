@@ -33,6 +33,14 @@
        Display="always" 
        Required="false">2000</Config>
 <Config Type="Variable" 
+       Name="LogicalDoc Database Host" 
+       Target="DB_HOST" 
+       Default="mysql-ld" 
+       Description="The database server host (default is 'mysql-ld')" 
+       Mask="false" 
+       Display="always" 
+       Required="false">mysql-ld</Config>
+<Config Type="Variable" 
        Name="LogicalDoc Database Engine" 
        Target="DB_ENGINE" 
        Default="mysql" 
