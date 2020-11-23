@@ -8,7 +8,7 @@
     <Support>https://docs.logicaldoc.com/en/</Support>
     <Network Default="bridge">bridge</Network>
     <WebUI>http://[IP]:[PORT:8080]</WebUI>
-    <Icon>https://github.com/johnsobi/UnRaidTemplates/blob/main/logicaldoc.png</Icon>
+    <Icon>https://i.imgur.com/iG0tQQI.png</Icon>
     <Category>Productivity</Category>
    <Config Type="Path" 
        Name="Config directory" 
